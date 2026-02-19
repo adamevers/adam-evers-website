@@ -1,0 +1,27 @@
+{
+  "name": "adam-evers-website",
+  "version": "1.0.0",
+  "description": "Personal website for Adam Evers - Chief of Staff and Operations Leader",
+  "main": "index.html",
+  "scripts": {
+    "dev": "wrangler pages dev dist --port 3000",
+    "build": "npm run copy-files",
+    "copy-files": "mkdir -p dist && cp index.html styles.css script.js dist/",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name adam-evers-website",
+    "preview": "npm run build && npm run dev"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "cloudflare-workers",
+    "static-site"
+  ],
+  "author": "Adam Evers <adam.evers@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
