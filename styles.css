@@ -1,25 +1,25 @@
 /* CSS Custom Properties */
 :root {
-    /* Colors */
-    --color-primary: #2563eb;
-    --color-primary-hover: #1d4ed8;
-    --color-secondary: #64748b;
-    --color-accent: #7c3aed;
-    --color-success: #10b981;
+    /* Colors - Warm, earth-toned, psychedelic-inspired palette */
+    --color-primary: #d4761a; /* warm orange */
+    --color-primary-hover: #b8651a;
+    --color-secondary: #8b7355; /* warm brown */
+    --color-accent: #c084fc; /* soft purple */
+    --color-success: #22c55e; /* natural green */
     --color-warning: #f59e0b;
     
-    /* Neutrals */
-    --color-white: #ffffff;
-    --color-gray-50: #f8fafc;
-    --color-gray-100: #f1f5f9;
-    --color-gray-200: #e2e8f0;
-    --color-gray-300: #cbd5e1;
-    --color-gray-400: #94a3b8;
-    --color-gray-500: #64748b;
-    --color-gray-600: #475569;
-    --color-gray-700: #334155;
-    --color-gray-800: #1e293b;
-    --color-gray-900: #0f172a;
+    /* Neutrals - Warmer, more organic tones */
+    --color-white: #fefcfb;
+    --color-gray-50: #faf8f5;
+    --color-gray-100: #f5f1eb;
+    --color-gray-200: #ede6db;
+    --color-gray-300: #d9cdb8;
+    --color-gray-400: #a68b65;
+    --color-gray-500: #8b7355;
+    --color-gray-600: #6b5d48;
+    --color-gray-700: #4a3f35;
+    --color-gray-800: #2d251e;
+    --color-gray-900: #1a140f;
     
     /* Typography */
     --font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -234,6 +234,19 @@ a:hover {
 .hero {
     padding: calc(72px + var(--space-24)) 0 var(--space-24);
     background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(212, 118, 26, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 60%, rgba(192, 132, 252, 0.08) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .hero .container {
@@ -266,8 +279,16 @@ a:hover {
 .hero-description {
     font-size: 1.25rem;
     color: var(--color-gray-600);
+    margin-bottom: var(--space-6);
+    max-width: 600px;
+}
+
+.hero-subdescription {
+    font-size: 1.1rem;
+    color: var(--color-gray-500);
     margin-bottom: var(--space-8);
     max-width: 600px;
+    font-style: italic;
 }
 
 .hero-actions {
@@ -292,6 +313,21 @@ a:hover {
     justify-content: center;
     box-shadow: var(--shadow-xl);
     animation: float 6s ease-in-out infinite;
+    position: relative;
+}
+
+.hero-avatar::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    opacity: 0.2;
+    animation: float 8s ease-in-out infinite reverse;
+    z-index: -1;
 }
 
 .avatar-placeholder {
@@ -635,8 +671,21 @@ section {
 
 /* Contact Section */
 .contact {
-    background: linear-gradient(135deg, var(--color-gray-900), var(--color-gray-800));
+    background: linear-gradient(135deg, var(--color-gray-800), var(--color-gray-700));
     color: var(--color-white);
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(212, 118, 26, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 20% 80%, rgba(192, 132, 252, 0.1) 0%, transparent 60%);
+    pointer-events: none;
 }
 
 .contact-content {
