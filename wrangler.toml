@@ -1,24 +1,11 @@
-[env.production]
 name = "adam-evers-website"
-compatibility_date = "2024-01-01"
-compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2026-02-19"
 
-# Routes
-routes = [
-  { pattern = "adamevers.dev", zone_name = "adamevers.dev" },
-  { pattern = "adamevers.dev/*", zone_name = "adamevers.dev" },
-  { pattern = "www.adamevers.dev", zone_name = "adamevers.dev" },
-  { pattern = "www.adamevers.dev/*", zone_name = "adamevers.dev" }
-]
+# Static assets configuration
+[assets]
+directory = "./dist"
 
-# Static assets
-[env.production.site]
-bucket = "./dist"
-
-# Development environment
-[env.development]
-name = "adam-evers-website-dev"
-compatibility_date = "2024-01-01"
-
-[env.development.site]
-bucket = "./dist"
+# Custom domain configuration (optional)
+# routes = [
+#   { pattern = "yourdomain.com/*", zone_name = "yourdomain.com" }
+# ]
